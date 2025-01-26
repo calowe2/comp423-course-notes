@@ -23,7 +23,7 @@ Go defines itself as "An open-source programming language supported by Google" a
 
 * VSCode installed
 * Docker installed **and** running
-* Git installed
+* Git installed  
 
 
 ### Step 1: Setting up a Git Repository
@@ -31,8 +31,8 @@ Go defines itself as "An open-source programming language supported by Google" a
 Go in your terminal and paste the following code 
 
 ``` yaml
-mkdir goproject
-cd goproject # (1)
+mkdir go-project
+cd go-project # (1)
 ```
 
 1.   This creates a new directory for us to work in! 
@@ -45,7 +45,7 @@ git init # (1)
 
 1.   This initializes Git in this directory
 
-Create a Readme File 
+Create a Readme file with the following code 
 
 ``` yaml
 echo "# Go Project ReadMe" > README.md
@@ -53,7 +53,7 @@ git add README.md
 git commit -m "Initial commit with README" # (1)
 ```
 
-1. Now our project has a readme file!! 
+1. Now our project has a readme file!!  
 
 
 ### Step 2: Setting up a Remote Repository on GitHub
@@ -62,31 +62,33 @@ git commit -m "Initial commit with README" # (1)
 
 * Fill in these details:
 
-    Repository Name: go-project-wahoo
+    **Repository Name:** go-project
 
-    Description: "Setting up my first Go repository."
+    **Description:** "Setting up my first Go repository."
 
-    Visibility: Public
+    **Visibility:** Public
 
 * Do not initialize the repository with a README, .gitignore, or license. 
 
-* Click create repository 
+* Click create repository  
 
 
-### Step 3: Add the repo as a remote 
+### Step 3: Add the Repo as a Remote  
 
-* Copy in this code, substituting in your Github username into the code: 
+* Enter this code substituting in your Github username: 
 
 ``` yaml
-echo "# Go Project ReadMe" > README.md
-git add README.md
-git commit -m "Initial commit with README" # (1)
+git remote add origin https://github.com/<your-username>/go-project.git # (1)
 ```
 
 1. Now we have added our Github repo as a remote
 
 
-Check your default branch name with the subcommand git branch. If it's not main, rename it to main with the following command: git branch -M main. 
+Check your default branch name with the subcommand git branch. If it's not main, rename it to main with the following command: 
+
+``` yaml
+git branch -M main.
+``` 
 
 Push your local commits to the GitHub repository with the following code:
 
@@ -94,11 +96,12 @@ Push your local commits to the GitHub repository with the following code:
 git push --set-upstream origin main # (1)
 ```
 
-1. Now we have 
+1. Now we have pushed out local commits to our GitHub repo  
 
 
-#### Step 4: Setting up a Dev Container
-1. In VS Code, open the go-project-wahoo directory. You can do this via: File > Open Folder.
+
+### Step 4: Setting up a Dev Container  
+1. In VS Code, open the go-project directory. You can do this via: File > Open Folder.
 
 1. Install the Dev Containers extension for VS Code.
     
@@ -110,48 +113,42 @@ Add the following code to your devcontainer.json file:
 
 ``` yaml
 {
-  "name": "Go Development Environment",                      // this is possibly wrong...?
-  "image": "mcr.microsoft.com/devcontainers/go:1.19", 
-  "settings": {
-    "go.gopath": "/workspace/go",
-    "go.useLanguageServer": true
-  },
-  "extensions": [
-    "golang.go" 
-  ],
-  "postCreateCommand": "go mod init example.com/go-project-wahoo || true",
-  "remoteUser": "vscode",
-  "workspaceFolder": "/workspace"
+	"name": "Go Project",
+	"image": "mcr.microsoft.com/devcontainers/go:latest",
+	"customizations": {
+        "vscode": {
+        "settings": {
+        "go.useLanguageServer": true
+    },
+    "extensions": [
+      "golang.go"
+    ]
+  }
 }
-```
+}
+```  
 
 
-#### Step 3: Reopen the Dev Container
+### Step 5: Reopen the Dev Container
 
-Reopen the project in the container by pressing Ctrl+Shift+P (or Cmd+Shift+P on Mac), typing "Dev Containers: Reopen in Container," and selecting the option. 
+Reopen the project in the container by pressing Ctrl+Shift+P (or Cmd+Shift+P on Mac), typing "Dev Containers: Reopen in Container," and selecting the option.  
 
 
-#### Step 4: Try it Out - Add a Hello World Example
+### Step 6: Try it Out by Adding a Hello World Example
 
-Enter pwd into your terminal within the dev container. If your current working directory is not go-project-wahoo, copy this code into your terminal to get inside the project.
-
-``` yaml
-cd /workspaces/go-project-wahoo
-```
-
-Enter the following code in order to initialize a go.mod file which is needed for all Go projects. 
+Enter the following code in the terminal in order to initialize a go.mod file which is needed for all Go projects. 
 
 ``` yaml
-go mod init example.com/go-project-wahoo
+go mod init example.com/go-project
 ```
 
-Enter the following code to create an empty file called main where we will create our Hello World project. We use nano here so we can immediately edit the file upon creation.
+Enter the following code in the terminal to create an empty file called main where we will create our Hello World project. We use nano here so we can immediately edit the file upon creation.
 
 ``` yaml
-nano main.go
+touch main.go
 ```
 
-Paste in the following code to create our Hello World project 
+Paste in the following code in your new main.go file to create our Hello World project 
 
 ``` yaml
 package main
@@ -162,10 +159,10 @@ func main() {
     fmt.Println("Hello COMP423!")}
 ```
 
-Save the file by pressing Ctrl+S!
+Save the file by pressing Ctrl+S!  
 
 
-#### Step 5: Compile and Run Your Project 
+### Step 7: Compile and Run Your Project 
 
 Run the following code to compile and run your project!
 
@@ -173,43 +170,39 @@ Run the following code to compile and run your project!
 go run main.go
 ```
 
-You should see "Hello COMP423!" printed!
+You should see "Hello COMP423!" printed!  
 
-#### Congrats! You have set up a project in the Go programming language! 
+### Step 8: Let's Save Our Work!
 
-
-
-
-Trying things out...
-run this code 
-
-``` py 
-import tensorflow as tf
-```
+Enter the following code in your terminal to commit
 
 ``` yaml
-theme:
-  features:
-    - content.code.annotate # (1)
+git add .
+git commit -m "Hello Comp423!"
 ```
 
-1.   I'm a code annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be written in Markdown.
+**Note**: If you get the following error
 
+fatal: detected dubious ownership in repository at '/workspaces/go-project'
+To add an exception for this directory, call:
 
-``` py linenums="1"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
+        git config --global --add safe.directory /workspaces/go-project
+
+Run the code as it says 
+
+``` yaml
+git config --global --add safe.directory /workspaces/go-project
 ```
 
-``` py hl_lines="2 3"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
+Then add and commit as stated above ^
+
+Finally, run
+
+``` yaml
+git push origin main # (1)
 ```
 
+1. Now our Github has all of our work!
+
+
+#### Congrats! You have set up a project in the Go programming language! 

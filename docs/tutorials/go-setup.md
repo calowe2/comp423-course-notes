@@ -134,6 +134,14 @@ Add the following code to your devcontainer.json file:
 
 Reopen the project in the container by pressing Ctrl+Shift+P (or Cmd+Shift+P on Mac), typing "Dev Containers: Reopen in Container," and selecting the option.  
 
+Run the Command 
+
+``` yaml
+go version
+```
+
+to prove to yourself that you are running a recent version of Go
+
 
 ### Step 6: Try it Out by Adding a Hello World Example
 
@@ -157,7 +165,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hello COMP423!")}
+    fmt.Println("Hello COMP423")}
 ```
 
 Save the file by pressing Ctrl+S!  
@@ -171,7 +179,19 @@ Run the following code to compile and run your project!
 go run main.go
 ```
 
-You should see "Hello COMP423!" printed!  
+You could instead use the following code to compile your code.
+
+``` yaml
+go build main.go
+```
+
+This command is similar to the command gcc which we learned in 211. This generates an exectuable which can be run with the next command
+
+``` yaml
+./main
+```
+
+You should see "Hello COMP423" printed using either set of commands!  
 
 ### Step 8: Let's Save Our Work!
 

@@ -48,7 +48,8 @@ git init # (1)
 Create a Readme file with the following code 
 
 ``` yaml
-echo "# Go Project ReadMe" > README.md
+echo "# Go Project ReadMe" 
+This project follows a tutorial found here https://calowe2.github.io/comp423-course-notes/tutorials/go-setup/ > README.md
 git add README.md
 git commit -m "Initial commit with README" # (1)
 ```

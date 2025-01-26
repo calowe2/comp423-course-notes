@@ -16,6 +16,9 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 
+extra_css:
+  - 'stylesheets.css'
+
 extra:
   annotate:
     json: [.s2]  # Enable annotation within JSON files

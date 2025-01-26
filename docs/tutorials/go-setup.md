@@ -1,6 +1,4 @@
 # Setting up a dev container for Go
-<!-- Its README.md should link back to your course notes site's tutorial. -->
-
 
 * Primary author: [Cassidy Lowe](https://github.com/calowe2) 
 
@@ -54,7 +52,7 @@ git add README.md
 git commit -m "Initial commit with README" # (1)
 ```
 
-1. Now our project has a readme file!!  
+1. Now our project has a readme file!! The echo command here in combination with > adds the text to our README file.
 
 
 ### Step 2: Setting up a Remote Repository on GitHub
@@ -85,7 +83,7 @@ git remote add origin https://github.com/<your-username>/go-project.git # (1)
 1. Now we have added our Github repo as a remote
 
 
-Check your default branch name with the subcommand git branch. If it's not main, rename it to main with the following command: 
+Check your default branch name with the subcommand git branch. If it's not main, rename it to main with the following command so that we are all on the same page for the rest of the commands: 
 
 ``` yaml
 git branch -M main.
@@ -129,6 +127,7 @@ Add the following code to your devcontainer.json file:
 }
 ```  
 
+This file sets up your dev container environment ensuring that it is consistent and reproducible. Hence why we love dev containers! Our name property gives a description of our dev containter, image is the image Docker is going to use, customizations adds useful configurations to VS Code such as telling it to use the Go Language Server, and our extensions installs Go in the container so that we do not need to install on our host machine.  
 
 ### Step 5: Reopen the Dev Container
 
@@ -205,9 +204,7 @@ git commit -m "Hello Comp423!"
 **Note**: If you get the following error
 
 fatal: detected dubious ownership in repository at '/workspaces/go-project'
-To add an exception for this directory, call:
-
-        git config --global --add safe.directory /workspaces/go-project
+To add an exception for this directory, call: git config --global --add safe.directory /workspaces/go-project
 
 Run the code as it says 
 

@@ -1,6 +1,7 @@
 # Setting up a dev container for Go
 
-* Primary author: [Cassidy Lowe](https://github.com/calowe2) 
+* Primary author: [Cassidy Lowe](https://github.com/calowe2)
+* Reviewer: [Trisha Samavedam](https://github.com/trisv1)
 
 ## Today we will be learning how to set up a dev container for Go 😊
 
@@ -43,6 +44,10 @@ git init # (1)
 
 1.   This initializes Git in this directory
 
+!!! note
+
+    The link in the following codeblock sends the reader to your personal repo?
+
 Create a Readme file with the following code 
 
 ``` yaml
@@ -82,6 +87,9 @@ git remote add origin https://github.com/<your-username>/go-project.git # (1)
 
 1. Now we have added our Github repo as a remote
 
+!!! note
+
+    Not sure if you wanted to add a word after remote (like repository perhaps)?
 
 Check your default branch name with the subcommand git branch. If it's not main, rename it to main with the following command so that we are all on the same page for the rest of the commands: 
 
@@ -166,6 +174,10 @@ import "fmt"
 func main() {
     fmt.Println("Hello COMP423")}
 ```
+
+!!! note
+
+    This is so true!!
 
 Save the file by pressing Ctrl+S!  
 

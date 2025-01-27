@@ -45,7 +45,7 @@ git init # (1)
 1.   This initializes Git in this directory
 
 !!! note
-
+    
     The link in the following codeblock sends the reader to your personal repo?
 
 Create a Readme file with the following code 

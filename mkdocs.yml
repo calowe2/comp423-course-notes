@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-site_name: COMP423 Course Notes
-theme:
-  name: material
-=======
 site_name: COMP423 Course Notes
 
 theme:
@@ -36,4 +31,3 @@ extra:
     json: [.s2]  # Enable annotation within JSON files
 
 
->>>>>>> baca9680abb34db7eb2f05800ecaff55eff2e7c3

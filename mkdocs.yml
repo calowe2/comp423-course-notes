@@ -1,3 +1,32 @@
+<<<<<<< HEAD
 site_name: COMP423 Course Notes
 theme:
   name: material
+=======
+site_name: COMP423 Course Notes
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.code.annotate  # Corrected spelling here
+    - content.code.select
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+extra_css:
+  - 'stylesheets.css'
+
+extra:
+  annotate:
+    json: [.s2]  # Enable annotation within JSON files
+
+
+>>>>>>> baca9680abb34db7eb2f05800ecaff55eff2e7c3
